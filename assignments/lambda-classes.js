@@ -44,8 +44,8 @@ class Instructor extends Person{
     grade(student, subject){
         return `${student.name} receives a perfect score on ${subject}`;
     }
-    randomGrade(student){
-        `${student}'s grade is now going to be ` + Math.random(student.studentGrade);
+    randomGrade(student, max){
+       return `${student.name}'s random grade is now going to be  ${Math.floor(Math.random(student.studentGrade) * Math.floor(max))}`;
     }
 }
 
@@ -181,11 +181,12 @@ const Patrick = new ProjectManagers({
 console.log(Brit.speak());
 console.log(Brit.demo("Objects"));
 console.log(Brit.grade(Kevin, "HTML"));
-console.log(Brit.randomGrade(Sally));
+console.log(Brit.randomGrade(Sally, 101));
 
 console.log(Bob.speak());
 console.log(Bob.demo("Arrays"));
 console.log(Bob.grade(Mary, "CSS"));
+console.log(Bob.randomGrade(Kevin, 101));
 
 console.log(Sally.speak());
 Sally.listsSubjects();
